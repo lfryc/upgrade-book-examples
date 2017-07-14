@@ -28,33 +28,18 @@ export class AppComponent {}
 export class AngularAComponent {
 }
 
-@Component({
-  template: `
-    <div style="background-color: green">
-      <div>Angular B!</div>
-      <div><a routerLink="/angular_a">Go to Angular A</a></div>
-      <div>Go to Angular B</div>
-      <div><a routerLink="/angularjs_a">Go to AngularJS A</a></div>
-      <div><a routerLink="/angularjs_b">Go to AngularJS B</a></div>
-    </div>
-  `
-})
-export class AngularBComponent {
-}
-
 @NgModule({
   declarations: [
     AppComponent,
     AngularAComponent,
-    AngularBComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'angular_a', pathMatch: 'full'},
       {path: 'angular_a', component: AngularAComponent},
-      {path: 'angular_b', component: AngularBComponent},
-      {path: '', loadChildren: './angularjs.module#AngularJSModule'}
+      {path: 'angular_b', loadChildren: './component-b.module#ComponentBModule'},
+      {path: '', loadChildren: './angularjs.module#MyModule'}
     ], {
       enableTracing: true,
       // Uncomment to enable preloading and prebootstrapping

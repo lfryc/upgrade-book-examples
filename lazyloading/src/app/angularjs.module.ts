@@ -26,7 +26,7 @@ export class EmptyComponent {}
     ])
   ]
 })
-export class AngularJSModule {
+export class MyModule {
   // The constructor is called only once, so we bootstrap the application
   // only once, when we first navigate to the legacy part of the app.
   constructor(upgrade: UpgradeModule) {
